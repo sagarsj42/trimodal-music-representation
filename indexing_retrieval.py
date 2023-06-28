@@ -93,7 +93,7 @@ for i in range(len(media)):
             if pos <= 1:
                 r_1 += 1
             elif pos <= 5:
-                r_5 =+ 1
+                r_5 += 1
             elif pos <= 10:
                 r_10 += 1
             ranks.append(pos)

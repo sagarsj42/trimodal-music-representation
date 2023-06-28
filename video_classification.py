@@ -8,7 +8,7 @@
 
 
 import os
-os.chdir('/scratch/sagarsj42')
+os.chdir('../../data')
 
 
 # In[37]:
@@ -25,7 +25,7 @@ from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_sc
 
 
 DATASET_INFO_DIR = './yt8m-clips-dataset-info'
-EMBEDS_DIR = 'weighted-cosine-sim-dissim-embeds'
+EMBEDS_DIR = 'weighted-contrastive-embeds'
 
 
 # In[13]:
