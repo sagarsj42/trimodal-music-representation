@@ -30,7 +30,7 @@ mkdir -p /scratch/sagarsj42 && cd $_
 
 # wget https://huggingface.co/lukewys/laion_clap/resolve/main/music_audioset_epoch_15_esc_90.14.pt
 
-# python ~/yt8m/store_preprocessed_av.py
+# python ~/yt8m/preprocess_av_clips.py
 
 # python ~/yt8m/train_cosine_sim_dissim.py
 # python ~/yt8m/train_weighted_cosine_sim_dissim.py

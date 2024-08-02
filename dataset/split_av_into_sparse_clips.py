@@ -1,11 +1,13 @@
 import os
+import sys
 import glob
 import math
 import json
 import random
 
+import numpy as np
 from pydub import AudioSegment
-from moviepy.editor import *
+from moviepy.editor import VideoFileClip
 
 
 data_home_dir = sys.argv[1]
@@ -102,9 +104,13 @@ for vid in os.listdir(input_split_dir):
             f.write(vid + f' | # audio clips, {len(a_clips)} != # video clips, {len(v_clips)}' + '\n')
         continue
 
-    n_sample_clips = math.ceil(v_dur / 40)
+    n_sparsity_options = [math.ceil(v_dur / (8*5)), math.ceil(v_dur / (8*4)), math.ceil(v_dur / (8*3)),
+                          math.ceil(v_dur / (8*2)), math.ceil(v_dur / (8*1.5)), math.ceil(v_dur / 8)]
+    n_sparsity_probs = [0.3, 0.2, 0.2, 0.2, 0.05, 0.05]
+    n_sample_clips = np.random.choice(n_sparsity_options, p=n_sparsity_probs)
     clip_indxs = random.sample(range(len(a_clips)), n_sample_clips)
     print(len(a_clips), len(v_clips), n_sample_clips)
+
     sampled_a_clips = [a_clips[i] for i in clip_indxs]
     sampled_v_clips = [v_clips[i] for i in clip_indxs]
     a_sampled_dur_sec = sum([len(c) for c in sampled_a_clips]) / 1000.0

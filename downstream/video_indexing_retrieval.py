@@ -5,7 +5,7 @@
 
 
 import os
-os.chdir('../../data')
+os.chdir('../../../data')
 
 
 # In[3]:
@@ -35,7 +35,7 @@ media = ['text', 'audio', 'video']
 # In[6]:
 
 
-clip_df = pd.read_json(os.path.join(DATASET_INFO_DIR, 'train', 'clip-info.jsonl'), lines=True)
+clip_df = pd.read_json(os.path.join(DATASET_INFO_DIR, '../train', 'clip-info.jsonl'), lines=True)
 
 print(clip_df.info())
 
@@ -45,7 +45,7 @@ clip_df.head()
 # In[7]:
 
 
-vid_df = pd.read_json(os.path.join(DATASET_INFO_DIR, 'train', 'video-info.jsonl'), lines=True)
+vid_df = pd.read_json(os.path.join(DATASET_INFO_DIR, '../train', 'video-info.jsonl'), lines=True)
 
 print(vid_df.info())
 

@@ -23,3 +23,7 @@ python3 ./split_av_into_sparse_clips.py $DATA_HOME_DIR
 python3 ./split_audio_into_clips.py $DATA_HOME_DIR
 
 python3 ./split_video_into_clips.py $DATA_HOME_DIR
+
+python3 ./prepare_clips_info.py $DATA_HOME_DIR
+
+python3 ./preprocess_av_clips.py $DATA_HOME_DIR

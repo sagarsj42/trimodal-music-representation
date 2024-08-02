@@ -1,8 +1,9 @@
 import os
+import sys
 import glob
 import json
 
-from moviepy.editor import *
+from moviepy.editor import VideoFileClip
 
 
 data_home_dir = sys.argv[1]

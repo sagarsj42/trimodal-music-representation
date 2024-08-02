@@ -8,7 +8,7 @@
 
 
 import os
-os.chdir('../../data')
+os.chdir('../../../data')
 
 
 # In[37]:
@@ -16,8 +16,8 @@ os.chdir('../../data')
 
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import LabelEncoder, MultiLabelBinarizer
 from sklearn.neural_network import MLPClassifier
+from sklearn.preprocessing import LabelEncoder, MultiLabelBinarizer
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, hamming_loss
 
 
@@ -38,7 +38,7 @@ media = ['text', 'audio', 'video']
 # In[14]:
 
 
-clip_df = pd.read_json(os.path.join(DATASET_INFO_DIR, 'train', 'clip-info.jsonl'), lines=True)
+clip_df = pd.read_json(os.path.join(DATASET_INFO_DIR, '../train', 'clip-info.jsonl'), lines=True)
 
 print(clip_df.info())
 
@@ -48,7 +48,7 @@ clip_df.head()
 # In[15]:
 
 
-vid_df = pd.read_json(os.path.join(DATASET_INFO_DIR, 'train', 'video-info.jsonl'), lines=True)
+vid_df = pd.read_json(os.path.join(DATASET_INFO_DIR, '../train', 'video-info.jsonl'), lines=True)
 
 print(vid_df.info())
 
